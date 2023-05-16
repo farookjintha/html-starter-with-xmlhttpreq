@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My WebPage</title>
+    
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- <style>
+        h1{
+            color: red;
+        }
+    </style> -->
+
+    <script>
+        function myFunc(){
+            var xmlHTTP = new XMLHttpRequest();  //initialize the XMLHTTPReq.
+            xmlHTTP.open('GET', 'https://jsonplaceholder.typicode.com/users', true); // hitting the URL 
+            xmlHTTP.send(); //sending the req;
+
+            //get the response
+            xmlHTTP.onreadystatechange = function(){
+                console.log(xmlHTTP.responseText);  //printing the response.
+                document.getElementById('users').innerHTML = xmlHTTP.responseText;
+
+            }
+        }
+
+        // myFunc();
+    </script>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <div id="users"></div>
+    <button onclick="myFunc()">Click Me.</button>
+</body>
+</html>
